@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>ch19</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>Controller</servlet-name>
+		<servlet-class>controller.PdsController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UploadServlet</servlet-name>
+		<servlet-class>fileupload.UploadServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/config.properties</param-value>
+		</init-param>
+
+		<!-- commons 라이브러리를 이용한 파일 업로드 설정 -->
+		<multipart-config>
+			<location>\uploadTemp</location><!-- 업로드한 파일 임시 저장 위치 기본갑:"" -->
+			<max-file-size>-1</max-file-size><!-- 업로드 최대 사이즈 -->
+			<max-request-size>-1</max-request-size><!-- Multipart요청 데이터의 최대 제한 크기 -->
+			<file-size-threshold>1024</file-size-threshold><!-- 업로드파일 임시 저장 단위 -->
+		</multipart-config>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UploadServlet</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+</web-app>

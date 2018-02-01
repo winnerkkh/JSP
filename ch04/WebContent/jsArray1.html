@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+/*  
+	배열 메소드
+	reverse(): 배열을 역순으로 정렬
+	sort(): 정렬 메소드
+	slice(): 배열의 일부를 선택
+	concat(): 배열을 하나로 합침
+	shift(): 첫번째 배열 요소 제거(값도 리턴해줌)
+	unshift(): 첫번째 인덱스에 요소 추가
+	pop(): 마지막 배열 제거(값도 리턴해줌)
+	join(): 배열사이에 지정된 문자열로 구분자 표시
+ */ 
+ 
+ var customer_age=[16,46,70,29,33]; //배열 생성
+ document.write(customer_age.join('-')+'<br>');
+ document.write(customer_age + '<hr>'); /* 선긋기 블럭요소 */
+ 
+ //배열 역순 정렬
+ document.write(customer_age.reverse()+'<br>');
+ document.write(customer_age+'<br>');
+ 
+ //
+ var korea = ['서울', '부산', '광주'];
+ 
+ //shift
+ var shift_korea = korea.shift();
+ document.write(shift_korea+'<br>');
+ document.write(korea+'<br><hr>');
+ 
+ //unshift
+ korea.unshift('제주도');
+ document.write(korea+'<br><hr>');
+
+ //pop
+ var pop_korea = korea.pop();//제일 마지막 요소 pop
+ document.write(pop_korea+'<br>');
+ document.write(korea+'<br><hr>');
+ 
+ document.write(korea.pop()+'<br><hr>');
+ 
+
+ </script> 
+</head>
+<body>
+
+
+
+</body>
+</html>

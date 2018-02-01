@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/httpRequest.js"></script>
+<script type="text/javascript">
+function chk(){
+	sendRequest("temp.jsp",null,viewTemp,'GET');
+}
+function viewTemp(){
+	var temp = document.getElementById("temp");
+	var max = document.getElementById("max");
+	if(httpRequest.readyState==4)
+		if(httpRequest.status==200){/* O.K */
+			var value = httpRequest.responseText;
+		    temp.innerHTML =value;
+		    var tp = value.split(",");
+		    var arrTemp = new Array(tp.length);//
+		    for(var i=0;i<tp.length;i++){
+		    	arrTemp[i] = parseFloat(tp[i]);
+		    }
+		    var mx =0.0;//최소값을 변수에 초기화
+		    for(var i=0;i<arrTemp.length;i++){
+		    	alert(mx);
+		    	alert(arrTemp[i]);
+		    	if(mx < arrTemp[i]) mx=arrTemp[i];//i번째 값과 비교하여 서로 바꾸기
+		    }
+		    max.innerHTML =mx;
+		}
+}
+</script>
+</head>
+<body>
+<input type="button" value="온도보기" onclick="chk()"><p>
+온도<div id="temp"></div>
+최고온도<div id="max"></div>
+</body>
+</html>

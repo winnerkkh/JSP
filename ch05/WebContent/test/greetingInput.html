@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function chk(){
+   var frm = document.forms[0].name;
+   if(!frm.value){
+	   alert("값을 입력하세요");
+	   frm.focus();
+	   return false;
+   }
+	return true;
+}
+</script>
+</head>
+<body>
+<form action="/ch05/greetingServlet" onsubmit="return chk()">
+	이름:<input type="text" name="name"><br>
+	<input type="submit" value="전송">
+</form>
+</body>
+</html>

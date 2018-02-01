@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="ifElsExam.jsp">
+		이름:<input type="text" name="name"><p>
+		좋아하는 색깔:<select name = "color">
+		<option value="blue">파랑</option>
+		<option value="red">빨강</option>
+		<option value="orange">오렌지</option>
+		<option value="etc">기타</option>
+		</select>
+		
+		
+	<p><input type="submit" value="보내기"></p>	
+	</form>
+
+<script type="text/javascript">
+var nick = document.getElementById("name");
+	nick.value = "이름을 입력하세요";
+	nic.onfocis = function(){ /* callback함수 정의 - 이벤트 발생시 호출되는 메소드 */
+		//var nick; //로컬 변수
+		//nick; //전역변수
+		this.style.background = "orange";
+		this.value'';
+		
+	} 
+</script>	
+	
+	
+</body>
+</html>

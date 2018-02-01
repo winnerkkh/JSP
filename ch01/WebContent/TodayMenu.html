@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select & post</title>
+</head>
+<body>
+	<h3>오늘 점심은 무엇을 먹을까?(2개 이상 선택하기)</h3>
+	 <form action="/ch01/TodayMenu">
+		<!-- name은 lunch라는 한개의 이름 이지만 전송되는 값은 두개 이상인 경우,
+      브라우저에서는 lunch라는 이름의 배열형태로 값을 전송함.
+      예) 떡볶기와 칼국수를 선택한 경우 => lunch[0]="떡볶기", lunch[1]="칼국수"
+       길이가 2인 lunch[]배열이 전송됨.;
+      서버에서는 request.getParameterValues("lunch")로 받음.
+   -->
+		<select name="lunch" multiple size=5>
+			<option>떡볶기
+			<option>버섯덮밥
+			<option>칼국수
+			<option>치즈김밥
+			<option>피자
+		</select> <input type="submit" value="전송">
+	</form>
+</body>
+</html>

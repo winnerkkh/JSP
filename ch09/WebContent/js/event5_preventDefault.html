@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>html의 기본 이벤트의 작동 막기</title>
+</head>
+<body>
+<form action="" id="frm">
+	<fieldset>
+		<legend>주소록</legend>
+		<textarea name="txt" id="text" rows="5" cols="30"></textarea><br>
+	    <input type="submit" id="q" value="불러오기">
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+	var address = ["홍길동","email:hong@naver.com"];/* 자바스크립트 배열 생성 */
+   //폼객체 생성
+   var q = document.getElementById('frm');
+	
+	function add_search(event){
+		var textarea = q.txt;
+		
+		//textarea에 주소록 표시
+		textarea.value = '이름 / 주소 \n';
+		textarea.value += address[0]+':'+address[1]+'\n';
+	}
+	
+	/* 
+	html 자체 이벤트와 자바스크립트 이벤트가 겹치는 경우
+	자체 이벤트 우선 -> preventDefault()
+	 */
+	 
+	//폼 제출시
+	q.addEventListener('submit',function(event){
+		 event.preventDefault();//기본 이벤트 해제.....
+		 add_search();//주소록 불러오기
+	});
+</script>
+</body>
+</html>

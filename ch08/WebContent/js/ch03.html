@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM 문서내 여러 객체 선택</title>
+</head>
+<body>
+<ul>
+	<li>first</li>
+	<li>second</li>
+	<li>third</li>
+</ul>
+
+<script>
+    /* 특정 태그명의 배열형태로 선택하여 받음-getElementsByTagName(태그) */
+	var li = document.getElementsByTagName('li');/* tag네임이 li것 모두 선택 */
+	li[1].style.backgroundColor="red";
+	li[1].style.color="white";
+</script>
+</body>
+</html>
