@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+div{
+	 width:180px;
+	 height:80px;
+	 margin:3px;
+	 float:left;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	  $('#menu1').click(function(){
+		  $.ajax({
+			  url:'menu.html',
+			  dataType:'html',
+			  success:function(data){
+				  $("#msg1").html(data);//innerHTML과 같다.
+			  }/* readyState==4 && status==200  */
+		  });
+	  });
+	  $('#menu2').click(function(){
+		  $.ajax({
+			  url:'menu.html',
+			  dataType:'html',
+			  success:function(data){
+				  $("#msg2").html($(data).find('li'));
+			  }
+		  });
+	  });
+});
+</script>
+</head>
+<body>
+<div><a id="menu1">메뉴선택</a><p>
+		<span id="msg1"></span>
+</div>
+<div><a id="menu2">메뉴선택</a><p>
+		<span id="msg2"></span>
+</div>
+</body>
+</html>

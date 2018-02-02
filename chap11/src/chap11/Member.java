@@ -14,6 +14,6 @@ public class Member {
 		return name;
 	}
 	public int getAge() {
-		return age;
+		return age; 
 	}
 }
